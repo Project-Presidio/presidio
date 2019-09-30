@@ -1,4 +1,4 @@
-package presidio;
+package presidio.Model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -79,17 +79,16 @@ public class Alert {
     }
     
     public String determineContact(){
-        if (threat.equals("Rescue Team")){
-            return contactNumbers.get(0);
+        switch (threat) {
+            case "Rescue Team":
+                return contactNumbers.get(0);
+            case "Medical Team":
+                return contactNumbers.get(1);
+            case "Police":
+                return contactNumbers.get(2);
+            default:
+                break;
         }
-        else if (threat.equals("Medical Team")){
-            return contactNumbers.get(1);
-            
-        }
-        
-        else if (threat.equals("Police")) {
-                    return contactNumbers.get(2);
-    }
         return "Could Not Find Number";
     
     }

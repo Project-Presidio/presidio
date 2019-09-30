@@ -1,6 +1,7 @@
 
-package presidio;
+package presidio.Model;
 
+import presidio.Model.Guide;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

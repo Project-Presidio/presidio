@@ -1,4 +1,4 @@
-package presidio;
+package presidio.Model;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -50,11 +50,10 @@ public class Guide {
         File folder = new File("/Users/malavikakamathur/Desktop/");
         File[] listOfFiles = folder.listFiles();
 
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].toString().substring(listOfFiles[i].toString().length() - 4).equals(".txt")) {
+        for (File listOfFile : listOfFiles) {
+            if (listOfFile.toString().substring(listOfFile.toString().length() - 4).equals(".txt")) {
                 try {
-
-                    BufferedReader br = new BufferedReader(new FileReader(listOfFiles[i]));
+                    BufferedReader br = new BufferedReader(new FileReader(listOfFile));
                     String st;
                     try {
                         while ((st = br.readLine()) != null) {
@@ -64,12 +63,11 @@ public class Guide {
                     } catch (IOException ex) {
                         Logger.getLogger(Guide.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } catch (FileNotFoundException ex) {
+                }catch (FileNotFoundException ex) {
                     Logger.getLogger(Guide.class.getName()).log(Level.SEVERE, null, ex);
 
                 }
             }
-
         }
 
     }

@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package presidio;
+package presidio.Model;
 
+import presidio.Model.Question;
 import java.util.ArrayList;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

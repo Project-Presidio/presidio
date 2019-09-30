@@ -1,6 +1,7 @@
 
-package presidio;
+package presidio.Model;
 
+import presidio.Model.Alert;
 import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -37,7 +38,7 @@ public class AlertTest {
     @Test
     public void testGetThreat() {
         System.out.println("getThreat");
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         String expResult = "Rescue Team";
         String result = instance.getThreat();
         assertEquals(expResult, result);
@@ -51,7 +52,7 @@ public class AlertTest {
     public void testSetThreat() {
         System.out.println("setThreat");
         String threat = "Rescue Team";
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         instance.setThreat(threat);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -62,7 +63,7 @@ public class AlertTest {
     @Test
     public void testGetCivilianDetails() {
         System.out.println("getCivilianDetails");
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         String expResult = "Civilian Details";
         String result = instance.getCivilianDetails();
         assertEquals(expResult, result);
@@ -76,7 +77,7 @@ public class AlertTest {
     public void testSetCivilianDetails() {
         System.out.println("setCivilianDetails");
         String civilianDetails = "Civilian";
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         instance.setCivilianDetails(civilianDetails);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -87,7 +88,7 @@ public class AlertTest {
     @Test
     public void testGetLocation() {
         System.out.println("getLocation");
-        Location test = new Location();
+        Location test = new Location(new Coordinate(0,0), "");
         Alert instance = new Alert("Rescue Team", "Civilian Details", test);
         Location expResult = test;
         Location result = instance.getLocation();
@@ -101,8 +102,8 @@ public class AlertTest {
     @Test
     public void testSetLocation() {
         System.out.println("setLocation");
-        Location location = new Location();;
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Location location = new Location(new Coordinate(0,0), "");
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         instance.setLocation(location);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -113,7 +114,7 @@ public class AlertTest {
 //    @Test
 //    public void testGetContactNumbers() {
 //        System.out.println("getContactNumbers");
-//        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+//        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
 //        HashMap<String, String> expResult = null;
 //        HashMap<String, String> result = instance.getContactNumbers();
 //        assertEquals(expResult, result);
@@ -127,7 +128,7 @@ public class AlertTest {
     public void testSetContactNumbers() {
         System.out.println("setContactNumbers");
         HashMap<String, String> contactNumbers = new HashMap();
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         instance.setContactNumbers(contactNumbers);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -138,7 +139,7 @@ public class AlertTest {
     @Test
     public void testDetermineContact() {
         System.out.println("determineContact");
-        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location());
+        Alert instance = new Alert("Rescue Team", "Civilian Details", new Location(new Coordinate(0,0), ""));
         String expResult = "+2222";
         String result = instance.determineContact();
         assertEquals(expResult, result);
